@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 object TorqueCalcForm: TTorqueCalcForm
   Left = 427
   Height = 235
@@ -452,3 +453,459 @@ object TorqueCalcForm: TTorqueCalcForm
     TabOrder = 4
   end
 end
+=======
+object TorqueCalcForm: TTorqueCalcForm
+  Left = 427
+  Height = 235
+  Top = 126
+  Width = 602
+  ActiveControl = CalculateButton
+  Caption = 'Torque and Acceleration Calculator'
+  ClientHeight = 235
+  ClientWidth = 602
+  Font.CharSet = ANSI_CHARSET
+  Font.Color = clBlack
+  Font.Height = -11
+  Font.Name = 'Arial'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  OnCreate = FormCreate
+  LCLVersion = '2.0.8.0'
+  object GroupBox1: TGroupBox
+    Left = 16
+    Height = 105
+    Top = 16
+    Width = 233
+    Caption = 'Motor Parameters'
+    ClientHeight = 86
+    ClientWidth = 229
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 8
+      Height = 14
+      Top = 8
+      Width = 54
+      Caption = 'Max Speed'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 8
+      Height = 14
+      Top = 32
+      Width = 61
+      Caption = 'Cont. Torque'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 8
+      Height = 14
+      Top = 56
+      Width = 59
+      Caption = 'Peak Torque'
+      ParentColor = False
+    end
+    object RPMEdit: TEdit
+      Left = 88
+      Height = 22
+      Hint = 'Maximum Motor Speed '
+      Top = 0
+      Width = 80
+      Alignment = taCenter
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Text = '3000'
+    end
+    object CTorqueEdit: TEdit
+      Left = 88
+      Height = 22
+      Hint = 'Continuous Torque from motor data sheet.'
+      Top = 24
+      Width = 80
+      Alignment = taCenter
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      Text = '226'
+    end
+    object PTorqueEdit: TEdit
+      Left = 88
+      Height = 22
+      Hint = 'Peak Torque from Motor Data Sheet.'#13#10'Use Continuous Torque if Peak not available '#13#10'or if Peak Current and Continuous Current are'#13#10'listed scale Continuous Torque the same amount.'
+      Top = 48
+      Width = 80
+      Alignment = taCenter
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      Text = '1125'
+    end
+    object Label7: TLabel
+      Left = 184
+      Height = 14
+      Top = 8
+      Width = 21
+      Caption = 'RPM'
+      ParentColor = False
+    end
+    object CTorqueLabel: TLabel
+      Left = 184
+      Height = 14
+      Top = 32
+      Width = 24
+      Caption = 'oz-in'
+      ParentColor = False
+    end
+    object PTorqueLabel: TLabel
+      Left = 184
+      Height = 14
+      Top = 56
+      Width = 24
+      Caption = 'oz-in'
+      ParentColor = False
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 323
+    Height = 105
+    Top = 16
+    Width = 258
+    Anchors = [akTop, akRight]
+    Caption = 'Motion Drive Parameters'
+    ClientHeight = 86
+    ClientWidth = 254
+    TabOrder = 1
+    object Label4: TLabel
+      Left = 8
+      Height = 14
+      Top = 8
+      Width = 83
+      Caption = 'LeadScrew Pitch'
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 8
+      Height = 14
+      Top = 32
+      Width = 75
+      Caption = 'Reduction Ratio'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 8
+      Height = 14
+      Top = 56
+      Width = 33
+      Caption = 'Weight'
+      ParentColor = False
+    end
+    object LeadScrewPitchEdit: TEdit
+      Left = 116
+      Height = 22
+      Hint = 'Lead Screw Pitch used to determine linear torque'
+      Top = 0
+      Width = 80
+      Alignment = taCenter
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      Text = '0.2'
+    end
+    object ReductionDenomEdit: TEdit
+      Left = 116
+      Height = 22
+      Hint = 'Driving Pulley does this many turns to Driven Pulley'
+      Top = 24
+      Width = 32
+      Alignment = taCenter
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      Text = '4'
+    end
+    object WeightEdit: TEdit
+      Left = 116
+      Height = 22
+      Hint = 'Weight of assembly moved by lead screw.'#13#10'Used to calculate force and acceleration'
+      Top = 48
+      Width = 80
+      Alignment = taCenter
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      Text = '400'
+    end
+    object PitchLabel: TLabel
+      Left = 208
+      Height = 14
+      Top = 8
+      Width = 32
+      Caption = 'inches'
+      ParentColor = False
+    end
+    object WeightLabel: TLabel
+      Left = 208
+      Height = 14
+      Top = 56
+      Width = 14
+      Caption = 'lbs'
+      ParentColor = False
+    end
+    object ReductionNumEdit: TEdit
+      Left = 164
+      Height = 22
+      Hint = 'Driven Pulley does this many turns for the number of Drive turns'
+      Top = 24
+      Width = 32
+      Alignment = taCenter
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+      Text = '1'
+    end
+    object Label20: TLabel
+      Left = 152
+      Height = 30
+      Top = 16
+      Width = 6
+      Caption = ':'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -21
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 16
+    Height = 105
+    Top = 123
+    Width = 473
+    Anchors = [akLeft, akBottom]
+    Caption = 'Unit Loading Results'
+    ClientHeight = 86
+    ClientWidth = 469
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 2
+    object Label8: TLabel
+      Left = 8
+      Height = 14
+      Top = 40
+      Width = 76
+      Caption = 'Cont. Lin. Force'
+      ParentColor = False
+    end
+    object Label9: TLabel
+      Left = 8
+      Height = 14
+      Top = 64
+      Width = 74
+      Caption = 'Peak Lin. Force'
+      ParentColor = False
+    end
+    object Label10: TLabel
+      Left = 8
+      Height = 14
+      Top = 15
+      Width = 93
+      Caption = 'LeadScrew Radius'
+      ParentColor = False
+    end
+    object LSRadiusEdit: TEdit
+      Left = 112
+      Height = 22
+      Hint = 'From Pitch used for calculating Linear force'
+      Top = 7
+      Width = 80
+      ParentShowHint = False
+      ReadOnly = True
+      ShowHint = True
+      TabOrder = 0
+      Text = '0'
+    end
+    object CLinForceEdit: TEdit
+      Left = 112
+      Height = 22
+      Hint = 'Force divided by weight gives acceleration'
+      Top = 32
+      Width = 80
+      ParentShowHint = False
+      ReadOnly = True
+      ShowHint = True
+      TabOrder = 1
+      Text = '0'
+    end
+    object PLinForceEdit: TEdit
+      Left = 112
+      Height = 22
+      Hint = 'For information only.'
+      Top = 56
+      Width = 80
+      ParentShowHint = False
+      ReadOnly = True
+      ShowHint = True
+      TabOrder = 2
+      Text = '0'
+    end
+    object RadiusLabel: TLabel
+      Left = 200
+      Height = 14
+      Top = 16
+      Width = 32
+      Caption = 'Inches'
+      ParentColor = False
+      OnClick = RadiusLabelClick
+    end
+    object CLinForceLabel: TLabel
+      Left = 200
+      Height = 14
+      Top = 40
+      Width = 14
+      Caption = 'lbs'
+      ParentColor = False
+    end
+    object PLinForceLabel: TLabel
+      Left = 200
+      Height = 14
+      Top = 64
+      Width = 14
+      Caption = 'lbs'
+      ParentColor = False
+    end
+    object Label14: TLabel
+      Left = 257
+      Height = 14
+      Top = 17
+      Width = 31
+      Caption = 'Speed'
+      ParentColor = False
+    end
+    object Label15: TLabel
+      Left = 257
+      Height = 14
+      Top = 40
+      Width = 31
+      Caption = 'Accel.'
+      ParentColor = False
+    end
+    object SpeedEdit: TEdit
+      Left = 296
+      Height = 22
+      Hint = 'Table speed in units per minute'
+      Top = 8
+      Width = 80
+      ParentShowHint = False
+      ReadOnly = True
+      ShowHint = True
+      TabOrder = 3
+      Text = '0'
+    end
+    object SpeedLabel: TLabel
+      Left = 380
+      Height = 14
+      Top = 14
+      Width = 39
+      Caption = 'inch/min'
+      ParentColor = False
+    end
+    object AccelGEdit: TEdit
+      Left = 296
+      Height = 22
+      Hint = 'Acceleration in Gravity'
+      Top = 32
+      Width = 40
+      ReadOnly = True
+      TabOrder = 4
+      Text = '0'
+    end
+    object Label17: TLabel
+      Left = 336
+      Height = 14
+      Top = 38
+      Width = 8
+      Caption = 'G'
+      ParentColor = False
+    end
+    object Label18: TLabel
+      Left = 256
+      Height = 14
+      Top = 64
+      Width = 31
+      Caption = 'Accel.'
+      ParentColor = False
+    end
+    object AccelEdit: TEdit
+      Left = 296
+      Height = 22
+      Hint = 'Accelration in the same units as Speed'
+      Top = 56
+      Width = 80
+      ParentShowHint = False
+      ReadOnly = True
+      ShowHint = True
+      TabOrder = 5
+      Text = '0'
+    end
+    object AccelLabel: TLabel
+      Left = 380
+      Height = 14
+      Top = 64
+      Width = 38
+      Caption = 'In/min^2'
+      ParentColor = False
+    end
+  end
+  object MetricCheckBox: TCheckBox
+    Left = 530
+    Height = 19
+    Hint = 'When checked units are in mm, Nm and grams'
+    Top = 126
+    Width = 55
+    Anchors = [akRight, akBottom]
+    Caption = 'Metric  '
+    Enabled = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnChange = MetricCheckBoxChange
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+    Visible = False
+  end
+  object CalculateButton: TButton
+    Left = 510
+    Height = 25
+    Hint = 'Click to recalculte updated values.'
+    Top = 198
+    Width = 75
+    Anchors = [akRight, akBottom]
+    Caption = 'Calculate'
+    OnClick = CalculateButtonClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 4
+  end
+end
+>>>>>>> dc426fc2042029ac4c0ddc9a34ffca2829cb49d9
